@@ -12,7 +12,7 @@
 
 /* This file includes macro definitions used for debugging */
 
-#define DEBUG_COMPILE_TEST // Compiles file testing_script.koberice instead of compiling file provided via command line args
+// #define DEBUG_COMPILE_TEST // Compiles file testing_script.koberice instead of compiling file provided via command line args
 #define SET_VERBOSE // Automatically turns on verbose mode
 // #define PRINT_TOKENS // Print tokens to stdout after input is tokenized
 // #define PRINT_LINE  // Print lines to stdout after reading them from file

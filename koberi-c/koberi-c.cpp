@@ -35,7 +35,7 @@ void KoberiC::compile(const std::string & filename) {
     analyze();
     translate();
     
-    std::cout << "Compilation successfully finished. " << std::endl;
+    std::cout << "Compilation successfully finished." << std::endl;
     
 }
 

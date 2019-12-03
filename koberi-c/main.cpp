@@ -18,29 +18,32 @@ int main(int argc, const char * argv[]) {
     
     /* Parse command line arguments */
     
-    if (argc < 2) {
-        std::cout << "Error: No file provided. Compilation terminated. " << std::endl;
-        return -1;
-    }
-    
     std::vector<std::string> args;
     
     for (int i = 1; i < argc; ++i) {
         args.emplace_back(argv[i]);
     }
     
-    std::string & file = args[0];
+    std::string file = "";
     
     for (auto & a : args) {
         if (a == "-v") {
             expr::setVerbose(true);
         }
-        else {
+        else if (file == "") {
+			file = a;
+        }
+		else {
             std::cout << "Unknown parameter: " << a << std::endl;
             return -1;
-        }
+		}
     }
     
+	if (file == "") {
+        std::cout << "Error: No file provided. Compilation terminated." << std::endl;
+        return -1;
+    }
+
 #endif
     
 #ifdef SET_VERBOSE
@@ -59,7 +62,7 @@ int main(int argc, const char * argv[]) {
 #endif
     } catch (std::exception & e) {
         std::cout << e.what() << "\n" << std::endl;
-        std::cout << "Compilation terminated. " << std::endl;
+        std::cout << "Compilation terminated." << std::endl;
     }
     
 #ifdef PRINT_TOKENS
