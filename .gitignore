@@ -1,0 +1,4 @@
+/examples/*.c
+/kc
+*.out
+
